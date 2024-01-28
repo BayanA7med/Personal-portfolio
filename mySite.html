@@ -82,18 +82,31 @@
       overflow: hidden;
     }
 
-    #personalInformation {
-      display: -webkit-box;
-      -webkit-line-clamp: 5;
-      -webkit-box-orient: vertical;
+
+    .personalInformation {
       overflow: hidden;
-      text-overflow: ellipsis;
-      position: relative;
+      line-height: 1.4em;
+      max-height: 4.8em;
+      margin-bottom: 10px;
       font-size: 12px;
-
-
+      position: relative;
 
     }
+
+    .personalInformation:target {
+      max-height: none;
+      /* Show full content when targeted */
+    }
+
+    .see-more {
+      cursor: pointer;
+      color: #3498db;
+      display: inline-block;
+      margin-top: 2px;
+      font-size: 12px;
+    }
+
+
 
     #hireMe {
       background-color: var(--color-blue);
@@ -192,15 +205,18 @@
   <article class="personal-information">
 
     <h4>Welcome to my site</h4>
-    <p style="font-size: 50px;font-family: 'Poppins';font-weight:bold ; color:#008AAA;">
+    <p style="font-size: 42px;font-family: 'Poppins';font-weight:bold ; color:#008AAA;">
       Hi, I`m Bayan, a <br> Software <span style="color:#D1884F;">Engineer.</span></p>
     </p>
-    <p id="personalInformation">
-      I am a graduate from Bethlehem University with a bachelor's degree in Software Engineering. I trained
-      as a front-end React developer and learned JavaScript basics at the ASAL Company. I have excellent experience
-      in HTML, CSS, and JavaScript .In addition, a good knowledge of ReactJs and React Native. I would like to
-      develop in the front end and learn more.
-    </p>
+    <div class="personalInformation" id="myParagraph">
+      <p>
+        I am a graduate from Bethlehem University with a bachelor's degree in Software Engineering. I trained
+        as a front-end React developer and learned JavaScript basics at the ASAL Company. I have excellent experience
+        in HTML, CSS, and JavaScript .In addition, a good knowledge of ReactJs and React Native. I would like to
+        develop in the front end and learn more.
+      </p>
+    </div>
+    <a href="#myParagraph" class="see-more">See More</a>
     <div class="conatiner-buttons">
       <button id="hireMe" type="button">hire me!</button>
       <button id="seeProject" type="button">See My Project</button>
